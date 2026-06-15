@@ -114,7 +114,7 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 900;
             letter-spacing: 2px;
             color: #fff;
@@ -123,7 +123,7 @@
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             list-style: none;
         }
 
@@ -131,7 +131,7 @@
             color: var(--text-light);
             text-decoration: none;
             font-family: 'Rajdhani', sans-serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             text-transform: uppercase;
             transition: color 0.3s;
@@ -139,59 +139,102 @@
 
         .nav-links a:hover {
             color: var(--cyan-primary);
+            text-shadow: 0 0 5px var(--cyan-primary);
         }
 
         /* === Hero Section === */
         .hero {
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             position: relative;
             padding-top: 120px;
-            padding-bottom: 40px;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.05) 0%, transparent 65%);
         }
 
         .hero-content {
-            max-width: 100%;
+            max-width: 650px;
             z-index: 2;
-            text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            line-height: 1.2;
+            font-size: 3.2rem;
+            line-height: 1.1;
             margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
             margin-bottom: 35px;
             font-family: 'Rajdhani', sans-serif;
         }
 
+        .hero-visual {
+            position: absolute;
+            right: 5%;
+            top: 55%;
+            transform: translateY(-50%);
+            width: 380px;
+            height: 380px;
+            background: linear-gradient(135deg, transparent, rgba(0, 229, 255, 0.05));
+            border: 2px solid var(--cyan-primary);
+            box-shadow: var(--cyan-glow);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            animation: float 8s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hero-visual-inner {
+            width: 88%;
+            height: 88%;
+            border: 1px dashed var(--cyan-primary);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            50% { transform: translateY(-53%) rotate(2deg); }
+            100% { transform: translateY(-50%) rotate(0deg); }
+        }
+
         /* === Pricing Lists === */
         .pricing-tables {
-            padding: 60px 0;
+            padding: 80px 0;
             background: linear-gradient(to bottom, transparent, var(--bg-surface));
         }
 
         .tables-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .price-card {
             background: var(--bg-card);
             border: 1px solid var(--cyan-dim);
             border-radius: 8px;
-            padding: 25px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .price-card:hover {
+            border-color: var(--cyan-primary);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
         }
 
         .price-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             margin-bottom: 20px;
             border-bottom: 2px solid var(--cyan-dim);
             padding-bottom: 10px;
@@ -214,44 +257,48 @@
             color: var(--cyan-primary);
             padding: 3px 8px;
             border-radius: 4px;
+            text-transform: uppercase;
         }
 
         /* === Interactive Boosting Calculator === */
         .calculator-section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
 
         .game-tabs {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
         .tab-btn {
             background: rgba(10, 14, 23, 0.8);
             border: 1px solid var(--cyan-dim);
             color: var(--text-muted);
-            padding: 12px 20px;
+            padding: 12px 30px;
             font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.3s;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
         }
 
         .tab-btn.active {
             border-color: var(--cyan-primary);
             color: var(--cyan-primary);
+            box-shadow: var(--cyan-glow);
             background: rgba(0, 229, 255, 0.05);
         }
 
         .calc-container {
             background: var(--bg-surface);
             border: 1px solid var(--cyan-dim);
-            padding: 25px;
-            max-width: 600px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            max-width: 800px;
             margin: 0 auto;
-            border-radius: 8px;
+            border-radius: 4px;
         }
 
         .calc-panel {
@@ -264,9 +311,18 @@
 
         .calc-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
             margin-bottom: 20px;
+        }
+
+        .calc-full-width {
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .calc-grid { grid-template-columns: 1fr; }
+            .hero-visual { display: none; }
         }
 
         .input-group {
@@ -278,75 +334,247 @@
         .input-group label {
             font-family: 'Rajdhani', sans-serif;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
             text-transform: uppercase;
         }
 
-        .input-group select {
+        .input-group select, .input-group input[type="text"] {
             background: var(--bg-dark);
             border: 1px solid #1e293b;
             padding: 14px;
             color: #fff;
             outline: none;
+            transition: all 0.3s;
             border-radius: 4px;
-            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .input-group select:focus, .input-group input[type="text"]:focus {
+            border-color: var(--cyan-primary);
         }
 
         .checkbox-group {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin: 20px 0;
+            margin-bottom: 25px;
+        }
+
+        .checkbox-group input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--cyan-primary);
         }
 
         .price-output {
             text-align: center;
             background: rgba(0, 229, 255, 0.03);
             border: 1px solid var(--cyan-dim);
-            padding: 25px;
+            padding: 30px;
             border-radius: 6px;
+        }
+
+        .rate-info-box {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.05rem;
+            color: var(--cyan-primary);
+            background: rgba(0, 229, 255, 0.05);
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+            border: 1px dashed rgba(0, 229, 255, 0.3);
         }
 
         .price-val {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 900;
             color: var(--cyan-primary);
-            margin: 10px 0;
+            text-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+            margin: 5px 0 15px 0;
         }
-
+        
         .whatsapp-btn {
-            display: inline-block;
+            display: block;
             margin-top: 15px;
             background: #25D366;
             color: #fff;
             text-decoration: none;
-            padding: 12px 24px;
+            padding: 14px;
             border-radius: 5px;
             font-family: 'Rajdhani', sans-serif;
             font-weight: bold;
+            font-size: 1.1rem;
             text-transform: uppercase;
-            width: 100%;
-            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.01);
+        }
+
+        /* === Urgency Section === */
+        .urgency {
+            background: linear-gradient(90deg, rgba(0, 229, 255, 0.08), rgba(2, 4, 8, 0.9), rgba(0, 229, 255, 0.08));
+            border-top: 1px solid var(--cyan-dim);
+            border-bottom: 1px solid var(--cyan-dim);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .time-box {
+            background: rgba(0, 229, 255, 0.05);
+            border: 1px solid var(--cyan-dim);
+            padding: 15px;
+            min-width: 90px;
+        }
+
+        .time-box span {
+            display: block;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            color: #fff;
+        }
+
+        .time-box label {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--cyan-primary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        /* === Chatbot Styles === */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+        }
+
+        .chat-btn {
+            width: 60px;
+            height: 60px;
+            background: var(--cyan-primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: var(--cyan-glow);
+            border: none;
+            font-size: 1.5rem;
+            color: var(--bg-dark);
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 340px;
+            height: 460px;
+            background: rgba(7, 12, 20, 0.98);
+            border: 2px solid var(--cyan-primary);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+            display: none;
+        }
+
+        .chat-window.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: rgba(0, 229, 255, 0.08);
+            padding: 15px;
+            border-bottom: 1px solid var(--cyan-dim);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-chat {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .message.bot {
+            align-self: flex-start;
+            background: rgba(2, 4, 8, 0.85);
+            border-left: 3px solid var(--cyan-primary);
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 12px;
+            border-top: 1px solid var(--cyan-dim);
+            background: var(--bg-dark);
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            background: transparent;
+            border: none;
+            color: #fff;
+            outline: none;
+        }
+
+        .chat-input button {
+            background: transparent;
+            border: none;
+            color: var(--cyan-primary);
+            cursor: pointer;
+            font-weight: bold;
         }
 
         /* === Reviews === */
         .reviews {
-            padding: 60px 0;
+            padding: 80px 0;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .review-card {
             background: var(--bg-surface);
             border: 1px solid var(--cyan-dim);
-            padding: 20px;
-            margin-bottom: 15px;
+            padding: 25px;
             border-radius: 6px;
-        }
-
-        .review-rating {
-            color: var(--gold);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
         }
 
         .review-user {
@@ -357,7 +585,6 @@
             justify-content: space-between;
         }
 
-        /* === Footer === */
         footer {
             background: #010204;
             padding: 30px 0;
@@ -374,8 +601,9 @@
             <nav>
                 <a href="#" class="logo">BEMITO GAMING</a>
                 <ul class="nav-links">
-                    <li><a href="#pricing">Prices</a></li>
+                    <li><a href="#pricing">Price List</a></li>
                     <li><a href="#calculator">Calculator</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
                 </ul>
             </nav>
         </div>
@@ -386,8 +614,15 @@
         <div class="container">
             <div class="hero-content">
                 <h1>MLBB & <span class="cyan-text">Magic Chess Go Go</span> Pro Joki</h1>
-                <p>Push your tier safely. Fast execution, secure login, and professional local boosters.</p>
-                <a href="#calculator" class="btn">Start Calculator</a>
+                <p>Push your rank to Mythical Immortal or dominate the Magic Chess boards. Fast execution, secure accounts, and 100% professional local boosters.</p>
+                <a href="#calculator" class="btn">Calculate Price</a>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-visual-inner">
+                    <div style="font-size: 3rem; color: var(--cyan-primary); margin-bottom: 10px;">⚔️</div>
+                    <h3 class="cyan-text">System Active</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Secure Login Encryption</p>
+                </div>
             </div>
         </div>
     </section>
@@ -395,169 +630,26 @@
     <!-- Pricing Tables Section -->
     <section id="pricing" class="pricing-tables">
         <div class="container">
-            <h2 style="text-align: center;">Package <span class="cyan-text">Tiers</span></h2>
+            <h2 style="text-align: center;">Standard <span class="cyan-text">Package Tiers</span></h2>
             <div class="tables-grid">
                 <div class="price-card">
                     <h3>Ranked <span class="badge-package">MLBB</span></h3>
+                    <div class="price-list-item"><span>Warrior to Master</span><span class="cyan-text">RM 15</span></div>
                     <div class="price-list-item"><span>Grandmaster to Epic</span><span class="cyan-text">RM 25</span></div>
                     <div class="price-list-item"><span>Epic to Legend</span><span class="cyan-text">RM 45</span></div>
                     <div class="price-list-item"><span>Legend to Mythic</span><span class="cyan-text">RM 70</span></div>
+                    <div class="price-list-item"><span>Mythic to Mythical Immortal</span><span class="cyan-text">RM 180</span></div>
                 </div>
                 <div class="price-card">
                     <h3>Magic Chess <span class="badge-package">MCGG</span></h3>
+                    <div class="price-list-item"><span>Warrior to Master</span><span class="cyan-text">RM 12</span></div>
                     <div class="price-list-item"><span>Grandmaster to Epic</span><span class="cyan-text">RM 20</span></div>
                     <div class="price-list-item"><span>Epic to Legend</span><span class="cyan-text">RM 35</span></div>
                     <div class="price-list-item"><span>Legend to Mythic</span><span class="cyan-text">RM 60</span></div>
+                    <div class="price-list-item"><span>Mythic to Mythical Immortal</span><span class="cyan-text">RM 150</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Calculator Section -->
-    <section id="calculator" class="calculator-section">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 30px;">Price <span class="cyan-text">Calculator</span></h2>
-            
-            <div class="game-tabs">
-                <button class="tab-btn active" onclick="switchGame('mlbb')">MLBB Ranked</button>
-                <button class="tab-btn" onclick="switchGame('mcgg')">Magic Chess</button>
-            </div>
-
-            <div class="calc-container">
-                <!-- MLBB Calculator Panel -->
-                <div id="mlbb-panel" class="calc-panel active">
-                    <div class="calc-grid">
-                        <div class="input-group">
-                            <label>Current Rank</label>
-                            <select id="mlbb-current" onchange="calculatePrice()">
-                                <option value="1">Grandmaster</option>
-                                <option value="2">Epic</option>
-                                <option value="3">Legend</option>
-                                <option value="4">Mythic</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label>Desired Rank</label>
-                            <select id="mlbb-desired" onchange="calculatePrice()">
-                                <option value="2">Epic</option>
-                                <option value="3">Legend</option>
-                                <option value="4">Mythic</option>
-                                <option value="5">Mythical Glory</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MCGG Calculator Panel -->
-                <div id="mcgg-panel" class="calc-panel">
-                    <div class="calc-grid">
-                        <div class="input-group">
-                            <label>Current Chess Tier</label>
-                            <select id="mcgg-current" onchange="calculatePrice()">
-                                <option value="1">Grandmaster</option>
-                                <option value="2">Epic</option>
-                                <option value="3">Legend</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label>Desired Chess Tier</label>
-                            <select id="mcgg-desired" onchange="calculatePrice()">
-                                <option value="2">Epic</option>
-                                <option value="3">Legend</option>
-                                <option value="4">Mythic</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="express-order" onchange="calculatePrice()">
-                    <label for="express-order" style="color: var(--text-muted);">Express Delivery (+20% Speed)</label>
-                </div>
-
-                <div class="price-output">
-                    <p style="text-transform: uppercase; font-size: 0.9rem; color: var(--text-muted);">Estimated Total</p>
-                    <div class="price-val">RM <span id="total-price">25</span></div>
-                    <a href="#" id="order-wa-btn" target="_blank" class="whatsapp-btn">Order via WhatsApp</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews -->
-    <section class="reviews">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 30px;">Feedbacks</h2>
-            <div class="review-card">
-                <div class="review-rating">★★★★★</div>
-                <p>"Super fast! My account went from Legend V to Mythic in less than 2 days. Legit local service."</p>
-                <div class="review-user">Syah_Z <span style="color:var(--cyan-primary)">Verified</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Bemito Gaming. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        let currentMode = 'mlbb';
-
-        function switchGame(mode) {
-            currentMode = mode;
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.calc-panel').forEach(panel => panel.classList.remove('active'));
-            
-            if(mode === 'mlbb') {
-                document.querySelectorAll('.tab-btn')[0].classList.add('active');
-                document.getElementById('mlbb-panel').classList.add('active');
-            } else {
-                document.querySelectorAll('.tab-btn')[1].classList.add('active');
-                document.getElementById('mcgg-panel').classList.add('active');
-            }
-            calculatePrice();
-        }
-
-        function calculatePrice() {
-            let basePrice = 0;
-            let currentLevel = 0;
-            let desiredLevel = 0;
-            let messageText = "";
-
-            if (currentMode === 'mlbb') {
-                currentLevel = parseInt(document.getElementById('mlbb-current').value);
-                desiredLevel = parseInt(document.getElementById('mlbb-desired').value);
-                if (desiredLevel <= currentLevel) {
-                    desiredLevel = currentLevel + 1;
-                    document.getElementById('mlbb-desired').value = desiredLevel;
-                }
-                basePrice = (desiredLevel - currentLevel) * 25; 
-                messageText = `Hi! I want to order MLBB Boosting from ${document.getElementById('mlbb-current').options[document.getElementById('mlbb-current').selectedIndex].text} to ${document.getElementById('mlbb-desired').options[document.getElementById('mlbb-desired').selectedIndex].text}`;
-            } else {
-                currentLevel = parseInt(document.getElementById('mcgg-current').value);
-                desiredLevel = parseInt(document.getElementById('mcgg-desired').value);
-                if (desiredLevel <= currentLevel) {
-                    desiredLevel = currentLevel + 1;
-                    document.getElementById('mcgg-desired').value = desiredLevel;
-                }
-                basePrice = (desiredLevel - currentLevel) * 20;
-                messageText = `Hi! I want to order Magic Chess Boosting from ${document.getElementById('mcgg-current').options[document.getElementById('mcgg-current').selectedIndex].text} to ${document.getElementById('mcgg-desired').options[document.getElementById('mcgg-desired').selectedIndex].text}`;
-            }
-
-            if (document.getElementById('express-order').checked) {
-                basePrice = Math.round(basePrice * 1.2);
-                messageText += " (Express)";
-            }
-
-            document.getElementById('total-price').innerText = basePrice;
-            document.getElementById('order-wa-btn').href = "https://wa.me/60123456789?text=" + encodeURIComponent(messageText + `. Total: RM ${basePrice}.`);
-        }
-
-        calculatePrice();
-    </script>
-</body>
-</html>
-
+    
