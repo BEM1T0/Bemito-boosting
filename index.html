@@ -70,10 +70,10 @@
         @keyframes float { 0%, 100% { transform: translateY(-50%) rotate(0deg); } 50% { transform: translateY(-53%) rotate(2deg); } }
         .pricing-tables, .calculator-section, .reviews { padding: 60px 0; }
         .pricing-tables { background: linear-gradient(to bottom, transparent, var(--bg-surface)); }
-        .tables-grid, .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 30px; }
+        .tables-grid, .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
         .price-card, .review-card { background: var(--bg-card); border: 1px solid var(--cyan-dim); border-radius: 8px; padding: 25px; transition: all 0.3s; }
         .price-card:hover, .review-card:hover { border-color: var(--cyan-primary); box-shadow: 0 0 15px rgba(0, 229, 255, 0.1); }
-        .price-card h3 { font-size: 1.35rem; margin-bottom: 15px; border-bottom: 2px solid var(--cyan-dim); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .price-card h3 { font-size: 1.15rem; margin-bottom: 12px; border-bottom: 2px solid var(--cyan-dim); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
         .price-list-sub { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; }
         .price-list-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.9rem; }
         .price-list-item:last-child { border-bottom: none; }
@@ -88,6 +88,7 @@
         .calc-container { background: var(--bg-surface); border: 1px solid var(--cyan-dim); padding: 30px; max-width: 850px; margin: 0 auto; border-radius: 4px; }
         .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
         .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group.hidden { display: none; }
         .input-group label { font-family: 'Rajdhani', sans-serif; font-weight: bold; font-size: 1rem; color: var(--text-light); text-transform: uppercase; }
         .input-group select, .input-group input { background: var(--bg-dark); border: 1px solid #1e293b; padding: 12px; color: #fff; font-family: 'Inter', sans-serif; outline: none; border-radius: 4px; }
         .input-group select:focus, .input-group input:focus { border-color: var(--cyan-primary); }
@@ -172,40 +173,57 @@
             <h2>Our Standard <span class="cyan-text">Pricing Grid</span></h2>
             <p style="text-align:center; color: var(--text-muted); max-width:600px; margin:0 auto 30px;">Transparent standard tariffs. Grab 10-star packages for premium discounted rates.</p>
             <div class="tables-grid">
+                <!-- MLBB Single -->
                 <div class="price-card">
                     <h3>MLBB (Single Star) <i data-lucide="star" class="cyan-text"></i></h3>
-                    <div class="price-list-sub">Extrapolated Low Ranks to High Tiers</div>
+                    <div class="price-list-sub">Warrior to Immortal System</div>
                     <div class="price-list-item"><span>Warrior / Elite</span><strong>RM0.20 / 🌟</strong></div>
                     <div class="price-list-item"><span>Master / Grandmaster</span><strong>RM0.30 / 🌟</strong></div>
                     <div class="price-list-item"><span>Epic</span><strong>RM0.40 / 🌟</strong></div>
                     <div class="price-list-item"><span>Legend</span><strong>RM0.80 / 🌟</strong></div>
-                    <div class="price-list-item"><span>Mythic</span><strong>RM1.00 / 🌟</strong></div>
-                    <div class="price-list-item"><span>Mythic Honor</span><strong>RM1.30 / 🌟</strong></div>
-                    <div class="price-list-item"><span>Mythic Glory</span><strong>RM2.50 / 🌟</strong></div>
-                    <div class="price-list-item"><span class="cyan-text">Mythical Immortal</span><strong>RM5.00 / 🌟</strong></div>
+                    <div class="price-list-item"><span>Mythic (0-24⭐)</span><strong>RM1.00 / 🌟</strong></div>
+                    <div class="price-list-item"><span>Mythic Honor (25-49⭐)</span><strong>RM1.30 / 🌟</strong></div>
+                    <div class="price-list-item"><span>Mythic Glory (50-99⭐)</span><strong>RM2.50 / 🌟</strong></div>
+                    <div class="price-list-item"><span class="cyan-text">Mythical Immortal (100⭐+)</span><strong>RM5.00 / 🌟</strong></div>
                 </div>
+                <!-- MLBB 10-Star -->
                 <div class="price-card">
                     <h3>MLBB (10-Star Pack) <span class="badge-package">SAVES RM!</span></h3>
-                    <div class="price-list-sub">Pack options for massive bulk order discount</div>
+                    <div class="price-list-sub">Direct bulk savings</div>
                     <div class="price-list-item"><span>Warrior / Elite</span><strong>RM1.00 / 10🌟</strong></div>
                     <div class="price-list-item"><span>Master / Grandmaster</span><strong>RM1.50 / 10🌟</strong></div>
                     <div class="price-list-item"><span>Epic</span><strong>RM2.00 / 10🌟</strong></div>
                     <div class="price-list-item"><span>Legend</span><strong>RM5.00 / 10🌟</strong></div>
-                    <div class="price-list-item"><span>Mythic</span><strong>RM10.00 / 10🌟</strong></div>
-                    <div class="price-list-item"><span>Mythic Honor</span><strong>RM12.00 / 10🌟</strong></div>
-                    <div class="price-list-item"><span>Mythic Glory</span><strong>RM24.00 / 10🌟</strong></div>
-                    <div class="price-list-item"><span class="cyan-text">Mythical Immortal</span><strong>RM48.00 / 10🌟</strong></div>
+                    <div class="price-list-item"><span>Mythic (0-24⭐)</span><strong>RM10.00 / 10🌟</strong></div>
+                    <div class="price-list-item"><span>Mythic Honor (25-49⭐)</span><strong>RM12.00 / 10🌟</strong></div>
+                    <div class="price-list-item"><span>Mythic Glory (50-99⭐)</span><strong>RM24.00 / 10🌟</strong></div>
+                    <div class="price-list-item"><span class="cyan-text">Mythical Immortal (100⭐+)</span><strong>RM48.00 / 10🌟</strong></div>
                 </div>
+                <!-- MCGG Pricing Single -->
                 <div class="price-card">
-                    <h3>Magic Chess Go Go <i data-lucide="crown" style="color: var(--gold);"></i></h3>
-                    <div class="price-list-sub">Double rate segment parameters</div>
-                    <div class="price-list-item"><span>Warrior / Elite Base</span><strong>RM0.40 / RM2.00 (10🌟)</strong></div>
-                    <div class="price-list-item"><span>Epic Base</span><strong>RM0.80 / RM4.00 (10🌟)</strong></div>
-                    <div class="price-list-item"><span>Legend Base</span><strong>RM1.60 / RM10.00 (10🌟)</strong></div>
-                    <div class="price-list-item"><span>Mythic Base</span><strong>RM2.00 / RM20.00 (10🌟)</strong></div>
-                    <div class="price-list-item"><span>Mythic Honor Base (100⭐)</span><strong>RM2.60 / RM24.00 (10🌟)</strong></div>
-                    <div class="price-list-item"><span>Mythic Glory Base (200⭐)</span><strong>RM5.00 / RM48.00 (10🌟)</strong></div>
-                    <div class="price-list-item"><span class="cyan-text">Mythical Immortal Base (400⭐)</span><strong>RM10.00 / RM96.00 (10🌟)</strong></div>
+                    <h3>MCGG (Single Star) <i data-lucide="crown" style="color: var(--gold);"></i></h3>
+                    <div class="price-list-sub">Double rates segment values</div>
+                    <div class="price-list-item"><span>Warrior / Elite</span><strong>RM0.40 / 🌟</strong></div>
+                    <div class="price-list-item"><span>Master / Grandmaster</span><strong>RM0.60 / 🌟</strong></div>
+                    <div class="price-list-item"><span>Epic</span><strong>RM0.80 / 🌟</strong></div>
+                    <div class="price-list-item"><span>Legend</span><strong>RM1.60 / 🌟</strong></div>
+                    <div class="price-list-item"><span>Mythic (0-99⭐)</span><strong>RM2.00 / 🌟</strong></div>
+                    <div class="price-list-item"><span>Mythic Honor (100-199⭐)</span><strong>RM2.60 / 🌟</strong></div>
+                    <div class="price-list-item"><span>Mythic Glory (200-399⭐)</span><strong>RM5.00 / 🌟</strong></div>
+                    <div class="price-list-item"><span class="cyan-text">Mythical Immortal (400⭐+)</span><strong>RM10.00 / 🌟</strong></div>
+                </div>
+                <!-- MCGG Pricing Pack -->
+                <div class="price-card">
+                    <h3>MCGG (10-Star Pack) <span class="badge-package">SAVES RM!</span></h3>
+                    <div class="price-list-sub">Dynamic bundle savings</div>
+                    <div class="price-list-item"><span>Warrior / Elite</span><strong>RM2.00 / 10🌟</strong></div>
+                    <div class="price-list-item"><span>Master / Grandmaster</span><strong>RM3.00 / 10🌟</strong></div>
+                    <div class="price-list-item"><span>Epic</span><strong>RM4.00 / 10🌟</strong></div>
+                    <div class="price-list-item"><span>Legend</span><strong>RM10.00 / 10🌟</strong></div>
+                    <div class="price-list-item"><span>Mythic (0-99⭐)</span><strong>RM20.00 / 10🌟</strong></div>
+                    <div class="price-list-item"><span>Mythic Honor (100-199⭐)</span><strong>RM24.00 / 10🌟</strong></div>
+                    <div class="price-list-item"><span>Mythic Glory (200-399⭐)</span><strong>RM48.00 / 10🌟</strong></div>
+                    <div class="price-list-item"><span class="cyan-text">Mythical Immortal (400⭐+)</span><strong>RM96.00 / 10🌟</strong></div>
                 </div>
             </div>
         </div>
@@ -215,44 +233,63 @@
         <div class="container">
             <h2>Ascension <span class="cyan-text">Path Calculator</span></h2>
             <div class="game-tabs">
-                <button class="tab-btn active" id="tabMlbb" onclick="switchGame('mlbb')">Mobile Legends (Ranked)</button>
+                <button class="tab-btn active" id="tabMlbb" onclick="switchGame('mlbb')">Mobile Legends</button>
                 <button class="tab-btn" id="tabMcgg" onclick="switchGame('mcgg')">Magic Chess Go Go</button>
             </div>
             <div class="calc-container">
                 <div class="calc-grid">
+                    <!-- Starting Parameters -->
                     <div class="input-group">
-                        <label>Current Rank Segment</label>
-                        <select id="currRankSelect" onchange="populateSubdivisions('curr'); runAscensionPathCalculation();"></select>
+                        <label>Current Rank</label>
+                        <select id="currRankSelect" onchange="toggleSubdivisionVisibility('curr'); runCalculation();"></select>
                     </div>
+
+                    <div class="input-group" id="currSubGroup">
+                        <label>Current Division</label>
+                        <select id="currSubSelect" onchange="runCalculation();"></select>
+                    </div>
+
+                    <div class="input-group" id="currStarsGroup">
+                        <label>Current Stars</label>
+                        <select id="currStarsSelect" onchange="runCalculation();"></select>
+                    </div>
+
+                    <div class="input-group hidden" id="currMythicStarsGroup">
+                        <label>Current Stars count</label>
+                        <input type="number" id="currMythicStarsInput" value="0" min="0" max="1000" placeholder="e.g. 15" oninput="runCalculation();">
+                    </div>
+
+                    <!-- Target Parameters -->
                     <div class="input-group">
-                        <label>Current Sub-division / Star offset</label>
-                        <select id="currSubSelect" onchange="runAscensionPathCalculation();"></select>
+                        <label>Target Rank</label>
+                        <select id="targetRankSelect" onchange="toggleSubdivisionVisibility('target'); runCalculation();"></select>
                     </div>
-                    <div class="input-group">
-                        <label>Target Rank Segment</label>
-                        <select id="targetRankSelect" onchange="populateSubdivisions('target'); runAscensionPathCalculation();"></select>
+
+                    <div class="input-group" id="targetSubGroup">
+                        <label>Target Division</label>
+                        <select id="targetSubSelect" onchange="runCalculation();"></select>
                     </div>
-                    <div class="input-group">
-                        <label>Current Sub-division / Star offset</label>
-                        <select id="currSubSelect" onchange="runAscensionPathCalculation();"></select>
+
+                    <div class="input-group" id="targetStarsGroup">
+                        <label>Target Stars</label>
+                        <select id="targetStarsSelect" onchange="runCalculation();"></select>
                     </div>
-                    <div class="input-group">
-                        <label>Target Rank Segment</label>
-                        <select id="targetRankSelect" onchange="populateSubdivisions('target'); runAscensionPathCalculation();"></select>
+
+                    <div class="input-group hidden" id="targetMythicStarsGroup">
+                        <label>Target Stars count</label>
+                        <input type="number" id="targetMythicStarsInput" value="100" min="0" max="1000" placeholder="e.g. 100" oninput="runCalculation();">
                     </div>
-                    <div class="input-group">
-                        <label>Target Sub-division / Star target</label>
-                        <select id="targetSubSelect" onchange="runAscensionPathCalculation();"></select>
-                    </div>
+
+                    <!-- Custom Preference input row -->
                     <div class="input-group" style="grid-column: span 2;">
                         <label id="customReqLabel">Request Specific Hero / Role Preference</label>
-                        <input type="text" id="customReqInput" placeholder="Leave blank if any. Note: Non-meta choices might attract small complexity fees." oninput="runAscensionPathCalculation();">
+                        <input type="text" id="customReqInput" placeholder="Leave blank if any. Note: Non-meta choices might attract small complexity fees." oninput="runCalculation();">
                     </div>
                 </div>
                 <div class="price-output">
                     <p>Total Ascension Path Cost</p>
                     <div class="price-val" id="priceDisplay">RM 0.00</div>
-                    <p style="font-size: 1rem; text-transform: none; color: var(--text-light); margin-bottom: 5px;" id="totalStarsLabel">0 Total Stars required on this sequence</p>
+                    <p style="font-size: 1rem; text-transform: none; color: var(--text-light); margin-bottom: 5px;" id="totalStarsLabel">0 Total Stars required</p>
                     <p style="font-size: 0.9rem; text-transform: none; color: var(--text-muted);" id="calcDetails">Sync parameters initializing...</p>
                 </div>
                 <div style="text-align: center;">
@@ -321,47 +358,101 @@
         </div>
         <button class="chat-btn" onclick="toggleChat()" id="chatToggleBtn"><i data-lucide="message-square" style="width: 24px; height: 24px;"></i></button>
     </div>
-    
-    <script>
+
+        <script>
         lucide.createIcons();
         const WHATSAPP_NUMBER = '012345678';
         let activeGame = 'mlbb';
         let finalCalculationOutput = {};
 
-        const RANK_TIERS = [
-            { name: 'Warrior', index: 0, subDivs: ['III', 'II', 'I'], starsPerDiv: 3, rateSingle: 0.20, ratePack: 1.00 },
-            { name: 'Elite', index: 1, subDivs: ['III', 'II', 'I'], starsPerDiv: 4, rateSingle: 0.20, ratePack: 1.00 },
-            { name: 'Master', index: 2, subDivs: ['IV', 'III', 'II', 'I'], starsPerDiv: 4, rateSingle: 0.30, ratePack: 1.50 },
-            { name: 'Grandmaster', index: 3, subDivs: ['V', 'IV', 'III', 'II', 'I'], starsPerDiv: 5, rateSingle: 0.30, ratePack: 1.50 },
-            { name: 'Epic', index: 4, subDivs: ['V', 'IV', 'III', 'II', 'I'], starsPerDiv: 5, rateSingle: 0.40, ratePack: 2.00 },
-            { name: 'Legend', index: 5, subDivs: ['V', 'IV', 'III', 'II', 'I'], starsPerDiv: 5, rateSingle: 0.80, ratePack: 5.00 },
-            { name: 'Mythic', index: 6, subDivs: ['0-9⭐', '10-19⭐', '20-29⭐', '30-39⭐', '40-49⭐'], starsPerDiv: 10, rateSingle: 1.00, ratePack: 10.00 },
-            { name: 'Mythic Honor', index: 7, subDivs: ['50-59⭐', '60-69⭐', '70-79⭐', '80-89⭐', '90-99⭐'], starsPerDiv: 10, rateSingle: 1.30, ratePack: 12.00 },
-            { name: 'Mythic Glory', index: 8, subDivs: ['100-149⭐', '150-199⭐', '200-249⭐', '250-299⭐', '300-349⭐', '350-399⭐'], starsPerDiv: 50, rateSingle: 2.50, ratePack: 24.00 },
-            { name: 'Mythical Immortal', index: 9, subDivs: ['400⭐+'], starsPerDiv: 1, rateSingle: 5.00, ratePack: 48.00 }
-        ];
+        // Base prices per single / pack per rank
+        const MLBB_RATES = {
+            'Warrior': { single: 0.20, pack: 1.00 },
+            'Elite': { single: 0.20, pack: 1.00 },
+            'Master': { single: 0.30, pack: 1.50 },
+            'Grandmaster': { single: 0.30, pack: 1.50 },
+            'Epic': { single: 0.40, pack: 2.00 },
+            'Legend': { single: 0.80, pack: 5.00 },
+            'Mythic': { single: 1.00, pack: 10.00 },
+            'Mythic Honor': { single: 1.30, pack: 12.00 },
+            'Mythic Glory': { single: 2.50, pack: 24.00 },
+            'Mythical Immortal': { single: 5.00, pack: 48.00 }
+        };
+
+        const RANK_LIST = ['Warrior', 'Elite', 'Master', 'Grandmaster', 'Epic', 'Legend', 'Mythic', 'Mythic Honor', 'Mythic Glory', 'Mythical Immortal'];
+
+        // Shared official configurations used by both MLBB & MCGG ranks before Mythic
+        const SHARED_TIER_CONFIG = {
+            'Warrior': { divisions: ['III', 'II', 'I'], stars: 3 },
+            'Elite': { divisions: ['III', 'II', 'I'], stars: 4 },
+            'Master': { divisions: ['IV', 'III', 'II', 'I'], stars: 4 },
+            'Grandmaster': { divisions: ['V', 'IV', 'III', 'II', 'I'], stars: 5 },
+            'Epic': { divisions: ['V', 'IV', 'III', 'II', 'I'], stars: 5 },
+            'Legend': { divisions: ['V', 'IV', 'III', 'II', 'I'], stars: 5 }
+        };
 
         function initializeCalcMenus() {
             const currSelect = document.getElementById('currRankSelect');
             const targetSelect = document.getElementById('targetRankSelect');
             currSelect.innerHTML = ''; targetSelect.innerHTML = '';
-            RANK_TIERS.forEach(rank => {
-                let opt1 = document.createElement('option'); opt1.value = rank.name; opt1.textContent = rank.name; currSelect.appendChild(opt1);
-                let opt2 = document.createElement('option'); opt2.value = rank.name; opt2.textContent = rank.name; targetSelect.appendChild(opt2);
+            
+            RANK_LIST.forEach(rank => {
+                let opt1 = document.createElement('option'); opt1.value = rank; opt1.textContent = rank; currSelect.appendChild(opt1);
+                let opt2 = document.createElement('option'); opt2.value = rank; opt2.textContent = rank; targetSelect.appendChild(opt2);
             });
+
             currSelect.value = 'Epic'; targetSelect.value = 'Mythical Immortal';
-            populateSubdivisions('curr'); populateSubdivisions('target');
+            
+            toggleSubdivisionVisibility('curr');
+            toggleSubdivisionVisibility('target');
+            runCalculation();
         }
 
-        function populateSubdivisions(type) {
-            const rankSelect = document.getElementById(`${type}RankSelect`);
+        function toggleSubdivisionVisibility(type) {
+            const rankVal = document.getElementById(`${type}RankSelect`).value;
+            const subGroup = document.getElementById(`${type}SubGroup`);
+            const starsGroup = document.getElementById(`${type}StarsGroup`);
+            const mythicGroup = document.getElementById(`${type}MythicStarsGroup`);
+
+            const config = SHARED_TIER_CONFIG[rankVal];
+
+            if (config !== undefined) {
+                subGroup.classList.remove('hidden');
+                starsGroup.classList.remove('hidden');
+                mythicGroup.classList.add('hidden');
+                populateSubDivisions(type, rankVal);
+            } else {
+                subGroup.classList.add('hidden');
+                starsGroup.classList.add('hidden');
+                mythicGroup.classList.remove('hidden');
+            }
+        }
+
+        function populateSubDivisions(type, rankVal) {
             const subSelect = document.getElementById(`${type}SubSelect`);
-            const selectedRank = RANK_TIERS.find(r => r.name === rankSelect.value);
+            const starsSelect = document.getElementById(`${type}StarsSelect`);
+            const config = SHARED_TIER_CONFIG[rankVal];
+
             subSelect.innerHTML = '';
-            if (selectedRank) {
-                selectedRank.subDivs.forEach((sub, i) => {
-                    let opt = document.createElement('option'); opt.value = i; opt.textContent = sub; subSelect.appendChild(opt);
-                });
+            config.divisions.forEach(div => {
+                let opt = document.createElement('option');
+                opt.value = div; opt.textContent = `Div ${div}`;
+                subSelect.appendChild(opt);
+            });
+
+            starsSelect.innerHTML = '';
+            for (let i = 0; i <= config.stars; i++) {
+                let opt = document.createElement('option');
+                opt.value = i; opt.textContent = `${i} Star${i !== 1 ? 's' : ''}`;
+                starsSelect.appendChild(opt);
+            }
+
+            if (type === 'curr') {
+                subSelect.value = config.divisions[0]; // e.g. Div V or III
+                starsSelect.value = 0;
+            } else {
+                subSelect.value = config.divisions[config.divisions.length - 1]; // e.g. Div I
+                starsSelect.value = config.stars;
             }
         }
 
@@ -370,70 +461,130 @@
             document.getElementById('tabMlbb').classList.toggle('active', gameType === 'mlbb');
             document.getElementById('tabMcgg').classList.toggle('active', gameType === 'mcgg');
             document.getElementById('customReqLabel').textContent = gameType === 'mlbb' ? "Request Specific Hero / Role Preference" : "Request Preferred Commander / Lineup Synergy";
-            runAscensionPathCalculation();
+            
+            toggleSubdivisionVisibility('curr');
+            toggleSubdivisionVisibility('target');
+            runCalculation();
         }
 
-        function runAscensionPathCalculation() {
-            const currRankName = document.getElementById('currRankSelect').value;
-            const targetRankName = document.getElementById('targetRankSelect').value;
-            const currSubIndex = parseInt(document.getElementById('currSubSelect').value) || 0;
-            const targetSubIndex = parseInt(document.getElementById('targetSubSelect').value) || 0;
-            const customRequestVal = document.getElementById('customReqInput').value.trim();
-            const currRankObj = RANK_TIERS.find(r => r.name === currRankName);
-            const targetRankObj = RANK_TIERS.find(r => r.name === targetRankName);
+        // Resolves any selected configuration set to an absolute progressive star value
+        function resolveAbsoluteStarValue(rank, subDivVal, starsVal, directMythicVal) {
+            let total = 0;
+            const rankIndex = RANK_LIST.indexOf(rank);
 
-            if (!currRankObj || !targetRankObj) return;
+            for (let i = 0; i < rankIndex; i++) {
+                const rName = RANK_LIST[i];
+                if (SHARED_TIER_CONFIG[rName]) {
+                    total += SHARED_TIER_CONFIG[rName].divisions.length * SHARED_TIER_CONFIG[rName].stars;
+                } else {
+                    if (rName === 'Mythic') total += (activeGame === 'mlbb' ? 25 : 100);
+                    else if (rName === 'Mythic Honor') total += (activeGame === 'mlbb' ? 25 : 100);
+                    else if (rName === 'Mythic Glory') total += (activeGame === 'mlbb' ? 50 : 200);
+                }
+            }
 
-            if (currRankObj.index > targetRankObj.index || (currRankObj.index === targetRankObj.index && currSubIndex >= targetSubIndex)) {
+            if (SHARED_TIER_CONFIG[rank]) {
+                const config = SHARED_TIER_CONFIG[rank];
+                const divIndex = config.divisions.indexOf(subDivVal);
+                total += (divIndex * config.stars) + starsVal;
+            } else {
+                total += directMythicVal;
+            }
+            return total;
+        }
+
+        function getRankTierNameFromAbsolute(absVal) {
+            let running = 0;
+
+            for (let i = 0; i < RANK_LIST.length; i++) {
+                const rName = RANK_LIST[i];
+                let capacity = 0;
+                if (SHARED_TIER_CONFIG[rName]) {
+                    capacity = SHARED_TIER_CONFIG[rName].divisions.length * SHARED_TIER_CONFIG[rName].stars;
+                } else {
+                    if (rName === 'Mythic') capacity = (activeGame === 'mlbb' ? 25 : 100);
+                    else if (rName === 'Mythic Honor') capacity = (activeGame === 'mlbb' ? 25 : 100);
+                    else if (rName === 'Mythic Glory') capacity = (activeGame === 'mlbb' ? 50 : 200);
+                    else capacity = 999999;
+                }
+                if (absVal < running + capacity) return rName;
+                running += capacity;
+            }
+            return 'Mythical Immortal';
+        }
+
+        function runCalculation() {
+            const currRank = document.getElementById('currRankSelect').value;
+            const targetRank = document.getElementById('targetRankSelect').value;
+            const customReq = document.getElementById('customReqInput').value.trim();
+
+            let absStart = 0;
+            if (SHARED_TIER_CONFIG[currRank]) {
+                const sub = document.getElementById('currSubSelect').value;
+                const stars = parseInt(document.getElementById('currStarsSelect').value) || 0;
+                absStart = resolveAbsoluteStarValue(currRank, sub, stars, 0);
+            } else {
+                const directVal = Math.max(0, parseInt(document.getElementById('currMythicStarsInput').value) || 0);
+                absStart = resolveAbsoluteStarValue(currRank, '', 0, directVal);
+            }
+
+            let absEnd = 0;
+            if (SHARED_TIER_CONFIG[targetRank]) {
+                const sub = document.getElementById('targetSubSelect').value;
+                const stars = parseInt(document.getElementById('targetStarsSelect').value) || 0;
+                absEnd = resolveAbsoluteStarValue(targetRank, sub, stars, 0);
+            } else {
+                const directVal = Math.max(0, parseInt(document.getElementById('targetMythicStarsInput').value) || 0);
+                absEnd = resolveAbsoluteStarValue(targetRank, '', 0, directVal);
+            }
+
+            const totalToClimb = absEnd - absStart;
+
+            if (totalToClimb <= 0) {
                 document.getElementById('priceDisplay').textContent = "RM 0.00";
-                document.getElementById('totalStarsLabel').textContent = "0 Total Stars required";
-                document.getElementById('calcDetails').textContent = "Warning: Select a target rank higher than your starting rank.";
+                document.getElementById('totalStarsLabel').textContent = "0 Stars";
+                document.getElementById('calcDetails').textContent = "Warning: Select a target segment higher than current segment.";
                 return;
             }
 
-            let totalStars = 0;
-            let starBreakdown = [];
-
-            for (let i = currRankObj.index; i <= targetRankObj.index; i++) {
-                const rankObj = RANK_TIERS[i];
-                let segmentStars = 0;
-                if (i === currRankObj.index && i === targetRankObj.index) {
-                    for (let d = currSubIndex; d < targetSubIndex; d++) segmentStars += rankObj.starsPerDiv;
-                } else if (i === currRankObj.index) {
-                    for (let d = currSubIndex; d < rankObj.subDivs.length; d++) segmentStars += rankObj.starsPerDiv;
-                } else if (i === targetRankObj.index) {
-                    for (let d = 0; d <= targetSubIndex; d++) segmentStars += rankObj.starsPerDiv;
-                } else {
-                    segmentStars = rankObj.subDivs.length * rankObj.starsPerDiv;
-                }
-                if (segmentStars > 0) {
-                    starBreakdown.push({ name: rankObj.name, stars: segmentStars, rateSingle: rankObj.rateSingle, ratePack: rankObj.ratePack });
-                    totalStars += segmentStars;
-                }
+            let distribution = {};
+            for (let s = absStart; s < absEnd; s++) {
+                const tierName = getRankTierNameFromAbsolute(s);
+                distribution[tierName] = (distribution[tierName] || 0) + 1;
             }
 
             let totalPrice = 0;
             const multiplier = (activeGame === 'mcgg') ? 2 : 1;
-            starBreakdown.forEach(item => {
-                const itemSingle = item.rateSingle * multiplier;
-                const itemPack = item.ratePack * multiplier;
-                const numPacks = Math.floor(item.stars / 10);
-                const remainder = item.stars % 10;
-                totalPrice += (numPacks * itemPack) + (remainder * itemSingle);
-            });
+
+            for (const [tier, count] of Object.entries(distribution)) {
+                const rates = MLBB_RATES[tier] || { single: 1.00, pack: 10.00 };
+                const singlePrice = rates.single * multiplier;
+                const packPrice = rates.pack * multiplier;
+
+                const numPacks = Math.floor(count / 10);
+                const remainder = count % 10;
+                totalPrice += (numPacks * packPrice) + (remainder * singlePrice);
+            }
 
             document.getElementById('priceDisplay').textContent = `RM ${totalPrice.toFixed(2)}`;
-            document.getElementById('totalStarsLabel').textContent = `${totalStars} Total Stars required on this sequence`;
-            let details = `Calculated: ${currRankObj.name} ${currRankObj.subDivs[currSubIndex]} ➔ ${targetRankObj.name} ${targetRankObj.subDivs[targetSubIndex]}`;
-            if (customRequestVal) details += ` • Request: "${customRequestVal}"`;
-            document.getElementById('calcDetails').textContent = details;
+            document.getElementById('totalStarsLabel').textContent = `${totalToClimb} Total Stars required on this sequence`;
+
+            let displayDetails = `Path: ${currRank} `;
+            if (SHARED_TIER_CONFIG[currRank]) displayDetails += `(${document.getElementById('currSubSelect').value} - ${document.getElementById('currStarsSelect').value}⭐)`;
+            else displayDetails += `(${document.getElementById('currMythicStarsInput').value}⭐)`;
+
+            displayDetails += ` ➔ ${targetRank} `;
+            if (SHARED_TIER_CONFIG[targetRank]) displayDetails += `(${document.getElementById('targetSubSelect').value} - ${document.getElementById('targetStarsSelect').value}⭐)`;
+            else displayDetails += `(${document.getElementById('targetMythicStarsInput').value}⭐)`;
+
+            document.getElementById('calcDetails').textContent = displayDetails;
 
             finalCalculationOutput = {
                 game: activeGame === 'mlbb' ? 'Mobile Legends' : 'Magic Chess Go Go',
-                currRank: `${currRankObj.name} (${currRankObj.subDivs[currSubIndex]})`,
-                targetRank: `${targetRankObj.name} (${targetRankObj.subDivs[targetSubIndex]})`,
-                stars: totalStars,
-                customReq: customRequestVal || 'None',
+                currRank: currRank + (SHARED_TIER_CONFIG[currRank] ? ` ${document.getElementById('currSubSelect').value} (${document.getElementById('currStarsSelect').value}⭐)` : ` (${document.getElementById('currMythicStarsInput').value}⭐)`),
+                targetRank: targetRank + (SHARED_TIER_CONFIG[targetRank] ? ` ${document.getElementById('targetSubSelect').value} (${document.getElementById('targetStarsSelect').value}⭐)` : ` (${document.getElementById('targetMythicStarsInput').value}⭐)`),
+                stars: totalToClimb,
+                customReq: customReq || 'None',
                 price: `RM ${totalPrice.toFixed(2)}`
             };
         }
@@ -472,7 +623,7 @@
         }
 
         function initiateOrderViaBot() {
-            runAscensionPathCalculation();
+            runCalculation();
             if (parseFloat(finalCalculationOutput.price?.replace('RM ', '')) <= 0 || !finalCalculationOutput.price) {
                 addBotMessage("B.E.M.I.T.O: Error! Select a valid rising path first.");
                 if(!chatWindow.classList.contains('active')) toggleChat();
@@ -517,17 +668,17 @@
                     if (lowerInput.includes('mlbb') || lowerInput.includes('mobile')) {
                         botOrderLog.game = "Mobile Legends: Bang Bang";
                         addBotMessage("Affirmative. Let's get you out of low-tier lobbies.");
-                        setTimeout(() => { addBotMessage("What is your current rank and target rank? (e.g. 'Epic V to Mythical Immortal')"); chatState = 2; }, 800);
+                        setTimeout(() => { addBotMessage("What is your current rank and target rank? (e.g. 'Epic to Mythical Immortal')"); chatState = 2; }, 800);
                     } else if (lowerInput.includes('chess') || lowerInput.includes('magic')) {
                         botOrderLog.game = "Magic Chess Go Go";
                         addBotMessage("Magic Chess! High variance, long match parameters. Let's bypass that.");
-                        setTimeout(() => { addBotMessage("What is your current rank and target rank? (e.g. 'Master II to Mythic Glory')"); chatState = 2; }, 800);
+                        setTimeout(() => { addBotMessage("What is your current rank and target rank? (e.g. 'Master to Mythic Glory')"); chatState = 2; }, 800);
                     } else {
                         addBotMessage("Please specify either **'MLBB'** or **'Chess'**, organic unit.");
                     }
                     break;
                 case 2:
-                    botOrderLog.currRank = input.split('to')[0]?.trim() || "Warrior III";
+                    botOrderLog.currRank = input.split('to')[0]?.trim() || "Warrior";
                     botOrderLog.targetRank = input.split('to')[1]?.trim() || "Mythical Immortal";
                     botOrderLog.stars = "Consulted via WhatsApp";
                     botOrderLog.price = "Calculated in final transmission";
@@ -549,8 +700,7 @@
                     break;
                 case 3:
                     if (input.length < 5) { addBotMessage("Invalid ID format detected. Try again with a clean User ID + Server ID parameter block."); return; }
-
-            botOrderLog.userId = input; chatState = 4;
+                    botOrderLog.userId = input; chatState = 4;
                     const waText = `*Bemito Gaming Joki Ascension Order* %0A%0A*Format:* ${botOrderLog.game}%0A*MLBB ID/Server:* ${botOrderLog.userId}%0A*Track Segment:* ${botOrderLog.currRank} ➔ ${botOrderLog.targetRank}%0A*Total Stars Processed:* ${botOrderLog.stars}%0A*Request Specifics:* ${botOrderLog.customReq}%0A*Price Estimation:* ${botOrderLog.price}%0A%0AInitialize checkout handshake protocol!`;
                     const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
                     addBotMessage("Formatting data matrix... Securing routing ports... Setup verified!");
